@@ -2,7 +2,7 @@ from __future__ import unicode_literals
 import decimal
 import os
 
-from datetime import date, timedelta, datetime, time, utc
+from datetime import date, timedelta, datetime, time, timezone
 
 from django.conf import settings
 from django.core.validators import EMPTY_VALUES
@@ -410,7 +410,7 @@ class DateTimeSerializer(BaseSerializer):
         if (field_timezone is not None) and not is_aware(value):
             return make_aware(value, field_timezone)
         elif (field_timezone is None) and is_aware(value):
-            return make_naive(value, utc)
+            return make_naive(value, timezone.utc)
         return value
 
     @classmethod

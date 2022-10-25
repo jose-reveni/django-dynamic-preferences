@@ -2,7 +2,7 @@ from __future__ import unicode_literals
 import decimal
 import os
 
-from datetime import date, timedelta, datetime, time
+from datetime import date, timedelta, datetime, time, utc
 
 from django.conf import settings
 from django.core.validators import EMPTY_VALUES
@@ -15,7 +15,6 @@ from django.utils.dateparse import (
 from django.utils.duration import duration_string
 from django.utils.encoding import force_str
 from django.utils.timezone import (
-    utc,
     is_aware,
     make_aware,
     make_naive,
